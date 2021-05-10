@@ -14,7 +14,7 @@ services:
       - "db"
     build: ./app
     ports:
-      - "9292:9292"
+      - "3000:3000"
     volumes:
       - ./app:/app
     environment:

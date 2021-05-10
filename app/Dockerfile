@@ -7,4 +7,4 @@ RUN bundle install
 EXPOSE 3000-9292
 
 # Configure the main process to run when running the image
-CMD ["bundle", "exec", "rackup"]
+CMD ["rackup"]

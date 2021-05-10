@@ -7,8 +7,10 @@ default: &default
   username: <%= ENV['username'] || 'app' %>
   password: <%= ENV['password'] || 'app' %>
 
+production:
+  <<: *default
 
-development: &development
+development:
   <<: *default
 
 test:

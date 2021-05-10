@@ -3,7 +3,6 @@ require 'sinatra/activerecord'
 require "sinatra/reloader"
 
 set :bind, '0.0.0.0'
-set :port, 3000
 
 class User < ActiveRecord::Base
 end
