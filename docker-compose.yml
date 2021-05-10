@@ -18,6 +18,7 @@ services:
     volumes:
       - ./app:/app
     environment:
+      APP_ENV: production
       POSTGRES_DB: "${PG_DATABASE}"
       POSTGRES_USER: "${PG_USER}"
       POSTGRES_PASSWORD: "${PG_PASSWORD}"

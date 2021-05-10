@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-require "sinatra/reloader"
 
 set :bind, '0.0.0.0'
 
@@ -9,9 +8,7 @@ end
 
 class App < Sinatra::Base
   register Sinatra::ActiveRecordExtension
-  configure :development do
-    register Sinatra::Reloader
-  end
+  set :bind, '0.0.0.0'
 
   before do
     content_type :json
@@ -33,5 +30,9 @@ class App < Sinatra::Base
   get '/users/:id/?' do
     @user = User.find_by_id(params[:id])
     @user.to_json
+  end
+
+  post '/users/' do
+    @user = User.create!(params)
   end
 end
