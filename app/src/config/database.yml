@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  database: <%= ENV['db'] || 'app' %>
+  host: <%= ENV['host'] || 'db' %>
+  port: <%= ENV['port'] || 5432 %>
+  username: <%= ENV['username'] || 'app' %>
+  password: <%= ENV['password'] || 'app' %>
+
+
+development: &development
+  <<: *default
+
+test:
+  <<: *default
